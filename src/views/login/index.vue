@@ -1,6 +1,14 @@
 <template>
   <div class="login-container">
-    <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
+    <div class="login-weaper animated bounceInDown">
+      <div class="login-left">
+        <img class="img" src="/img/logo.png" alt="">
+        <p class="title">{{ website.infoTitle }}</p>
+        <p>©2019 v2.0.1</p>
+      </div>
+      <div class="login-border">
+        <div class="login-main">
+          <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" auto-complete="on" label-position="left">
       <h3 class="title">vue-admin-template</h3>
       <el-form-item prop="username">
         <span class="svg-container">
@@ -33,10 +41,15 @@
         <span> password: admin</span>
       </div>
     </el-form>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import '@/styles/login.scss'
+import { mapGetters } from 'vuex'
 import { isvalidUsername } from '@/utils/validate'
 
 export default {
@@ -69,6 +82,9 @@ export default {
       pwdType: 'password',
       redirect: undefined
     }
+  },
+  computed: {
+    ...mapGetters(['website'])
   },
   watch: {
     $route: {
