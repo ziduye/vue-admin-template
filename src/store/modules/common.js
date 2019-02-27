@@ -1,5 +1,4 @@
-import { getStore, removeStore, setStore } from '@/util/store'
-import website from '@/const/website'
+import { getStore, removeStore, setStore } from '@/utils/store'
 
 const common = {
 
@@ -20,8 +19,7 @@ const common = {
     showMenu: getStore({ name: 'showMenu' }),
     theme: getStore({ name: 'theme' }) || '#409EFF',
     themeName: getStore({ name: 'themeName' }) || 'theme-white',
-    lockPasswd: getStore({ name: 'lockPasswd' }) || '',
-    website: website
+    lockPasswd: getStore({ name: 'lockPasswd' }) || ''
   },
   actions: {},
   mutations: {
